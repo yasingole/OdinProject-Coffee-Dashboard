@@ -1,0 +1,346 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 250px 4fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas:
+        "sidebar header"
+        "sidebar main-content";
+    background-color: white;
+    font-family: "Palanquin", sans-serif;
+}
+
+/* Sidebar section  */
+.sidebar {
+    grid-area: sidebar;
+    display: grid;
+    grid-template-rows: repeat(3, max-content);
+    background-color: #6F4E37;
+    color: white;
+
+}
+
+/* Icon styles */
+i {
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+/* Link styles */
+.links {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+}
+
+.links:hover {
+    background-color: #8b5a3e;
+    transition: background-color 0.3s ease;
+}
+
+/* Company info section styles */
+.company-info {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+}
+
+.text-logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-right: 5px;
+}
+
+/* Navigation and user options styles */
+.navigation-container,
+.user-options {
+    margin: 20px 0;
+    padding: 10px 0;
+}
+
+/* Header section  */
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr;
+    width: 100%;
+    background-color: white;
+    grid-template-areas:
+        "search alert-bar"
+        "welcome-bar header-buttons";
+    padding: 15px 30px;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.search {
+    grid-area: search;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.search input {
+    flex-grow: 1;
+    font-size: 1rem;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #cbccdf;
+    padding: 0.25rem 0.75rem;
+    transition: border-color 0.3s;
+}
+
+.search input:focus {
+    border-color: #6F4E37;
+    outline: none;
+}
+
+.search button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    margin-left: 8px;
+}
+
+.alert-bar {
+    grid-area: alert-bar;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 20px;
+}
+
+.alert-bar i {
+    margin-left: 10px;
+}
+
+.alert-bar p {
+    margin-left: 10px;
+}
+
+.alert-bar img {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    border: 2px solid #6F4E37;
+    object-fit: cover;
+    margin-left: 10px;
+}
+
+.welcome-bar {
+    grid-area: welcome-bar;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: 14px;
+}
+
+.header-buttons {
+    grid-area: header-buttons;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 15px;
+}
+
+.header-buttons button {
+    border-radius: 20px;
+    background-color: #6F4E37;
+    color: white;
+    border: none;
+    width: auto;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.welcome-bar img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #6F4E37;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.header-buttons button:hover {
+    background-color: #8b5a3e;
+}
+
+/* main-content section  */
+.main-content {
+    grid-area: main-content;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "projects announcements"
+        "projects trending";
+    background-color: #f0f0f0;
+    gap: 20px;
+    padding: 20px;
+}
+
+.projects {
+    grid-area: projects;
+    padding: 15px;
+    border-radius: 8px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: max-content;
+    gap: 20px;
+}
+
+.section-title {
+    grid-column: span 2;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.project-cards {
+    height: 300px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    min-width: 300px;
+}
+
+.project-cards h4 {
+    margin: 0;
+    font-size: 1.2rem;
+}
+
+.project-cards p {
+    margin: 5px 0;
+    color: #666;
+}
+
+.project-icons {
+    margin-top: auto;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.project-icons i {
+    cursor: pointer;
+    color: #6F4E37;
+    transition: color 0.2s;
+}
+
+.project-icons i:hover {
+    color: #8b5a3e;
+    transform: scale(1.2);
+}
+
+.announcements {
+    grid-area: announcements;
+    padding: 15px;
+    min-height: 300px;
+    height: 100%;
+}
+
+.announcements-cards {
+    padding: 15px;
+    background-color: white;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    gap: 10px;
+}
+
+.announcement-item {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+    width: 100%;
+    height: auto;
+}
+
+.announcement-item:last-child {
+    border-bottom: none;
+}
+
+.trending {
+    grid-area: trending;
+    padding: 15px;
+    min-height: 300px;
+    height: 100%;
+}
+
+#trending-title {
+    margin-bottom: 15px;
+}
+
+.trending-cards {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 0px;
+}
+
+.trending-item {
+    padding: 15px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: auto;
+}
+
+.trending-profiles {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    border: 2px solid #6F4E37;
+    object-fit: cover;
+}
+
+.trending-text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.usernames {
+    font-weight: bold;
+    margin: 0;
+}
+
+.project-allocation {
+    margin: 0;
+    color: #666;
+}
